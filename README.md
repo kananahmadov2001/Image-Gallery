@@ -6,7 +6,7 @@
 The Image Gallery is a responsive web application showcasing luxury car brands: Mercedes-Benz, BMW, and Audi. The gallery enables users to explore high-quality images of each brand, view them in fullscreen mode, and reorder images interactively.
 
 ## GitHub Page
-Here is the link: []
+Here is the link: [https://wustl-cse204a-fl2024-2.github.io/image-gallery-kananahmadov2001/]
 
 ## Technologies/Tools Used
 * Frontend: HTML, CSS, JavaScript
