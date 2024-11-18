@@ -1,4 +1,4 @@
-# Masterpieces of Luxury and Performance (Photo Gallery)
+# Image Gallery
 
 ## Overview
 
