@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(45deg, #111, #333);
+  font-family: 'Playfair Display', serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #000000;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: white;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header img.logo-mercedes, header img.logo-bmw, header img.logo-audi {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: auto;
+}
+header img.logo-mercedes { left: 2rem; }
+header img.logo-bmw { left: 8rem; }
+header img.logo-audi { left: 16rem; }
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: #CCCCCC;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #0059ff;
+}
+
+.gallery-section {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.gallery-description {
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.gallery-description h2 {
+  margin-top: 0.5rem;
+}
+
+.gallery-description p {
+  margin: 0;
+  font-size: 1rem;
+  color: #DDDDDD;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.gallery img {
+  width: 100%;
+  border: 0.3rem solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.gallery img:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.5s;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border: 0.5rem solid white;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.control {
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: absolute;
+}
+
+.control:hover {
+  transform: scale(1.3);
+}
+
+#previous {
+  left: 5%;
+}
+
+#next {
+  right: 5%;
+}
+
+#close {
+  top: 5%;
+  right: 5%;
+  font-size: 2.5rem;
+}
+
+#play, #pause {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 2.5rem;
+}
+
+#pause {
+  display: none;
+}
+
+/* visual feedback for dragging */
+.dragging {
+  opacity: 0.5;
+}
+.drag-over {
+  border: 2px dashed #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1500px) {
+  header {
+    padding: 1.5rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  header p {
+    margin-bottom: 1rem;
+  }
+  nav a {
+    margin: 0 0.5rem;
+  }
+  header img.logo-mercedes,
+  header img.logo-bmw,
+  header img.logo-audi {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  header img.logo-mercedes,
+  header img.logo-bmw,
+  header img.logo-audi {
+    display: none;
+  }
+  header h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+  header p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  nav a {
+    font-size: 0.9rem;
+    margin: 0 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  header p {
+    font-size: 0.9rem;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    display: inline-block;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    font-size: 0.8rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
